@@ -9,12 +9,7 @@ pipeline {
     }
     stage('Run Unit Tests') {
       steps {
-        sh 'py -m pytest --junitxml results.xml word_fun_test.py'
-      }
-    }
-    stage('Report Test Results') {
-      steps {
-        junit 'results.xml'
+        bat(script: './jenkins/scripts/run_tests.bat', returnStdout: true)
       }
     }
   }
