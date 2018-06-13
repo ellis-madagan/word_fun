@@ -12,5 +12,10 @@ pipeline {
         bat(script: '.\\scripts\\pytest.bat', returnStdout: true)
       }
     }
+    stage('Archive Test Results') {
+      steps {
+        junit 'results/*.xml'
+      }
+    }
   }
 }
