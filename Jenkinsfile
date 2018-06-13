@@ -12,10 +12,5 @@ pipeline {
         bat(script: '.\\scripts\\pytest.bat', returnStdout: true)
       }
     }
-    stage('Report Test Results') {
-      steps {
-        junit(testResults: '.\\results\\tests.xml', allowEmptyResults: true)
-      }
-    }
   }
 }
