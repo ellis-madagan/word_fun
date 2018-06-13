@@ -9,7 +9,7 @@ pipeline {
     }
     stage('Run Unit Tests') {
       steps {
-        bat(script: 'scripts\\pytest.bat', returnStdout: true)
+        bat(script: '.\\scripts\\pytest.bat', returnStdout: true)
       }
     }
   }
