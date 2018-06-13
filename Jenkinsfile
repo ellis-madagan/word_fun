@@ -14,8 +14,7 @@ pipeline {
     }
     stage('Report Test Results') {
       steps {
-        fileExists 'test.xml'
-        junit 'test.xml'
+        junit 'results\\tests.xml'
       }
     }
   }
